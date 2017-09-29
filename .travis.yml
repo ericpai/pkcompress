@@ -1,0 +1,22 @@
+sudo: false
+
+language: go
+
+go:
+    - 1.9
+
+services:
+    - mysql
+
+before_install:
+    - mysql -uroot -h127.0.0.1 -P3306 < data.sql
+
+install:
+    - curl https://glide.sh/get | sh
+    - glide install
+
+script:
+    - go test -v -coverprofile=coverage.txt -covermode=atomic
+
+after_success:
+    - bash <(curl -s https://codecov.io/bash)
