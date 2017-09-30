@@ -77,7 +77,8 @@ func analyseTable(db *sql.DB, dbName, tableName string) (*Table, error) {
 	pkType, err := analyseColumnType(db, dbName, tableName, pkName)
 
 	if _, exist := intType[pkType]; !exist {
-		return nil, NonIntegerColumnTypeError{pkName, pkType}
+		fmt.Printf(">> The primary key is not integer type, but %s\n", pkType)
+		pkName = ""
 	}
 
 	fmt.Println("> Start to find all foreign keys")

@@ -38,6 +38,10 @@ func (a *Analyzer) analyseAndCompress() error {
 		}
 	}
 	for _, table := range analysedTables {
+		if len(table.pkColumnName) == 0 {
+			fmt.Printf("[Skipped] Skip table %s as its primary key is not integer type\n", table.name)
+			continue
+		}
 		count, err := table.compressPrimaryKey(a.db)
 		if err != nil {
 			fmt.Printf("! Compress table primary key error: %s\n", err.Error())
