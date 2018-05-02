@@ -1,6 +1,7 @@
 # pkcompress
 
 [![Build Status](https://travis-ci.org/ericpai/pkcompress.svg?branch=master)](https://travis-ci.org/ericpai/pkcompress) [![codecov](https://codecov.io/gh/ericpai/pkcompress/branch/master/graph/badge.svg)](https://codecov.io/gh/ericpai/pkcompress) [![MIT license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fericpai%2Fpkcompress.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fericpai%2Fpkcompress?ref=badge_shield)
 
 PkCompress is a tool to compress discrete integer primary keys of MySQL tables.
 
@@ -118,3 +119,6 @@ If it connects the database successfully, you can have a cup of coffee and watch
 ## Limitation
 
 As the [MySQL document](https://dev.mysql.com/doc/refman/5.6/en/innodb-foreign-key-constraints.html) said, the update role will be treated as `RESTRICT` no matter what the constraint definition is if the referenced column is in the same table. So PkCompress can't handle this scenario yet.
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fericpai%2Fpkcompress.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fericpai%2Fpkcompress?ref=badge_large)
